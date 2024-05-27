@@ -1,0 +1,1307 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.11.0 on win32)" generated="2024-05-23T14:06:11.750113" rpa="false" schemaversion="5">
+<suite id="s1" name="Login" source="C:\Users\SurajA.ACS\eclipse-workspace\browserstackqa\tests\login.robot">
+<kw name="Open the browser with the url" owner="loginpage" type="SETUP">
+<kw name="Create Webdriver" owner="SeleniumLibrary">
+<msg time="2024-05-23T14:06:13.217966" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<arg>Chrome</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<status status="PASS" start="2024-05-23T14:06:13.217966" elapsed="3.081341"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2024-05-23T14:06:16.300463" level="INFO">Opening url 'https://bstackdemo.com/signin'</msg>
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2024-05-23T14:06:16.300329" elapsed="2.267254"/>
+</kw>
+<kw name="Set Browser Implicit Wait" owner="SeleniumLibrary">
+<arg>5</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2024-05-23T14:06:18.567583" elapsed="0.002164"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-05-23T14:06:18.569747" elapsed="0.024315"/>
+</kw>
+<doc>To open the browser with the provided url</doc>
+<status status="PASS" start="2024-05-23T14:06:13.216967" elapsed="5.377095"/>
+</kw>
+<test id="s1-t1" name="Login to the app with valid creds" line="12">
+<kw name="Login to the application" owner="loginpage">
+<kw name="Find And Click Element" owner="globalweb">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2024-05-23T14:06:29.245892" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-05-23T14:06:29.245892" level="FAIL">Element '$username_fld_loc' not visible after 10 seconds.</msg>
+<arg>${element}</arg>
+<arg>${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="FAIL" start="2024-05-23T14:06:18.596062" elapsed="10.696179">Element '$username_fld_loc' not visible after 10 seconds.</status>
+</kw>
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<arg>2x</arg>
+<arg>1s</arg>
+<arg>Click Element</arg>
+<arg>${element}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="NOT RUN" start="2024-05-23T14:06:29.292241" elapsed="0.000000"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<var>${half_timeout}</var>
+<arg>${timeout}/2</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" start="2024-05-23T14:06:29.293839" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="${element_goneafterclick}">
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<arg>2x</arg>
+<arg>1s</arg>
+<arg>Element gone or not visible</arg>
+<arg>${element}</arg>
+<arg>timeout=${half_timeout}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="NOT RUN" start="2024-05-23T14:06:29.293839" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2024-05-23T14:06:29.293839" elapsed="0.000000"/>
+</branch>
+<status status="NOT RUN" start="2024-05-23T14:06:29.293839" elapsed="0.000000"/>
+</if>
+<if>
+<branch type="IF" condition="'''${validate_elementvisible}'''!='''None'''">
+<kw name="Verify Element On Page" owner="globalweb">
+<arg>${validate_elementvisible}</arg>
+<status status="NOT RUN" start="2024-05-23T14:06:29.293839" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2024-05-23T14:06:29.293839" elapsed="0.000000"/>
+</branch>
+<status status="NOT RUN" start="2024-05-23T14:06:29.293839" elapsed="0.000000"/>
+</if>
+<arg>$username_fld_loc</arg>
+<doc>&gt;Element waits to be visible and then clicks on element.
+&gt;Timeout is the amount of time the function waits for the element to be visible.
+&gt;If validate_elementvisible is entered, the function will perform a validation check to
+ensure the expected element is present in the DOM of the page and is also visible.
+&gt;If element_goneafterclick is passed as True, verifies the element is not appearing after click.</doc>
+<status status="FAIL" start="2024-05-23T14:06:18.595063" elapsed="10.698776">Element '$username_fld_loc' not visible after 10 seconds.</status>
+</kw>
+<kw name="Find And Click Element" owner="globalweb">
+<arg>${username_tb_loc}</arg>
+<doc>&gt;Element waits to be visible and then clicks on element.
+&gt;Timeout is the amount of time the function waits for the element to be visible.
+&gt;If validate_elementvisible is entered, the function will perform a validation check to
+ensure the expected element is present in the DOM of the page and is also visible.
+&gt;If element_goneafterclick is passed as True, verifies the element is not appearing after click.</doc>
+<status status="NOT RUN" start="2024-05-23T14:06:29.293839" elapsed="0.000000"/>
+</kw>
+<kw name="Find And Click Element" owner="globalweb">
+<arg>${password_fld_loc}</arg>
+<doc>&gt;Element waits to be visible and then clicks on element.
+&gt;Timeout is the amount of time the function waits for the element to be visible.
+&gt;If validate_elementvisible is entered, the function will perform a validation check to
+ensure the expected element is present in the DOM of the page and is also visible.
+&gt;If element_goneafterclick is passed as True, verifies the element is not appearing after click.</doc>
+<status status="NOT RUN" start="2024-05-23T14:06:29.293839" elapsed="0.000000"/>
+</kw>
+<kw name="Find And Click Element" owner="globalweb">
+<arg>${password_tb_loc}</arg>
+<doc>&gt;Element waits to be visible and then clicks on element.
+&gt;Timeout is the amount of time the function waits for the element to be visible.
+&gt;If validate_elementvisible is entered, the function will perform a validation check to
+ensure the expected element is present in the DOM of the page and is also visible.
+&gt;If element_goneafterclick is passed as True, verifies the element is not appearing after click.</doc>
+<status status="NOT RUN" start="2024-05-23T14:06:29.293839" elapsed="0.000000"/>
+</kw>
+<kw name="Find And Click Element" owner="globalweb">
+<arg>${signin_btn_loc}</arg>
+<doc>&gt;Element waits to be visible and then clicks on element.
+&gt;Timeout is the amount of time the function waits for the element to be visible.
+&gt;If validate_elementvisible is entered, the function will perform a validation check to
+ensure the expected element is present in the DOM of the page and is also visible.
+&gt;If element_goneafterclick is passed as True, verifies the element is not appearing after click.</doc>
+<status status="NOT RUN" start="2024-05-23T14:06:29.293839" elapsed="0.000000"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<arg>css:.username</arg>
+<arg>demouser</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="NOT RUN" start="2024-05-23T14:06:29.293839" elapsed="0.000000"/>
+</kw>
+<doc>Login to the application</doc>
+<status status="FAIL" start="2024-05-23T14:06:18.595063" elapsed="10.698776">Element '$username_fld_loc' not visible after 10 seconds.</status>
+</kw>
+<status status="FAIL" start="2024-05-23T14:06:18.594062" elapsed="10.699777">Element '$username_fld_loc' not visible after 10 seconds.</status>
+</test>
+<test id="s1-t2" name="Get List Of Vendors" line="16">
+<kw name="Get List Of Vendors" owner="cartpage">
+<kw name="Compare Web Elements And Field Values" owner="globalweb">
+<kw name="Create List" owner="BuiltIn">
+<msg time="2024-05-23T14:06:29.293839" level="INFO">@{list} = [ ]</msg>
+<var>@{list}</var>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2024-05-23T14:06:29.293839" elapsed="0.000000"/>
+</kw>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2024-05-23T14:06:34.312207" level="INFO">${fields_names} = []</msg>
+<var>${fields_names}</var>
+<arg>${locator_value}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2024-05-23T14:06:29.301850" elapsed="5.010357"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<var>${str}</var>
+<arg>${field_name}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-05-23T14:06:34.312207" elapsed="0.000000"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${list}</arg>
+<arg>${str}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="NOT RUN" start="2024-05-23T14:06:34.312207" elapsed="0.000000"/>
+</kw>
+<var name="${field_name}"/>
+<status status="NOT RUN" start="2024-05-23T14:06:34.312207" elapsed="0.000000"/>
+</iter>
+<var>${field_name}</var>
+<value>@{fields_names}</value>
+<status status="NOT RUN" start="2024-05-23T14:06:34.312207" elapsed="0.000000"/>
+</for>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-05-23T14:06:34.312207" level="INFO">[]</msg>
+<arg>${list}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-05-23T14:06:34.312207" elapsed="0.000000"/>
+</kw>
+<kw name="Compare Two Values Are Equal" owner="globalweb">
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Should Be Equal" owner="BuiltIn">
+<msg time="2024-05-23T14:06:34.316398" level="FAIL">['Apple', 'Samsung', 'Google', 'OnePlus'] != []</msg>
+<arg>${first_value}</arg>
+<arg>${second_value}</arg>
+<arg>ignore_case=${ignore_case}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="FAIL" start="2024-05-23T14:06:34.312207" elapsed="0.004411">['Apple', 'Samsung', 'Google', 'OnePlus'] != []</status>
+</kw>
+<msg time="2024-05-23T14:06:34.316618" level="INFO">${is_passed} = False</msg>
+<var>${is_passed}</var>
+<arg>Should Be Equal</arg>
+<arg>${first_value}</arg>
+<arg>${second_value}</arg>
+<arg>ignore_case=${ignore_case}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2024-05-23T14:06:34.312207" elapsed="0.004411"/>
+</kw>
+<if>
+<branch type="IF" condition="${is_passed}==False">
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-05-23T14:06:34.317617" level="INFO">['Apple', 'Samsung', 'Google', 'OnePlus'] &amp; [] are not equal. Check whether the error is with data type or data. </msg>
+<arg>${first_value} &amp; ${second_value} are not equal. Check whether the error is with data type or data. ${msg}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-05-23T14:06:34.317617" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-05-23T14:06:34.317119" elapsed="0.000998"/>
+</branch>
+<status status="PASS" start="2024-05-23T14:06:34.317119" elapsed="0.001419"/>
+</if>
+<arg>${list_value}</arg>
+<arg>${list}</arg>
+<doc>Compares two strings or integers or numbers. If both are not matched then captures the screenshot and then fails with generic error message
+first_value: actual value to be compared
+second_value: expected value to be compared</doc>
+<status status="PASS" start="2024-05-23T14:06:34.312207" elapsed="0.006656"/>
+</kw>
+<arg>${vendors_tab_loc}</arg>
+<arg>${vendors}</arg>
+<doc>Validated the Elements on the page against the provided list Values
+locator_value: Provided Locator path to retrieve list
+list_value: Provided list values to compare against retrieve list
+str_to_removed: This value is set if any value to remove for comparison
+remove_str: By default it will be false, If it is set to True then str_to_removed argument need to be set</doc>
+<status status="PASS" start="2024-05-23T14:06:29.293839" elapsed="5.025024"/>
+</kw>
+<status status="PASS" start="2024-05-23T14:06:29.293839" elapsed="5.025024"/>
+</kw>
+<kw name="Get List Count" owner="cartpage">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-05-23T14:06:34.819811" level="INFO">Slept 500 milliseconds.</msg>
+<arg>0.5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-05-23T14:06:34.319363" elapsed="0.500448"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-05-23T14:06:40.056603" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-05-23T14:06:40.056603" level="FAIL">Element with locator 'xpath=//div[@class="shelf-container-header"]//span' not found.</msg>
+<var>${text}</var>
+<arg>${avl_count_loc}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="FAIL" start="2024-05-23T14:06:34.819811" elapsed="5.277796">Element with locator 'xpath=//div[@class="shelf-container-header"]//span' not found.</status>
+</kw>
+<kw name="Split String" owner="String">
+<var>${words}</var>
+<arg>${text}</arg>
+<arg>${SPACE}</arg>
+<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
+<status status="NOT RUN" start="2024-05-23T14:06:40.097816" elapsed="0.000000"/>
+</kw>
+<kw name="Convert To Integer" owner="BuiltIn">
+<var>${visible_number}</var>
+<arg>${words}[0]</arg>
+<doc>Converts the given item to an integer number.</doc>
+<status status="NOT RUN" start="2024-05-23T14:06:40.097816" elapsed="0.000000"/>
+</kw>
+<kw name="Get Element Count" owner="SeleniumLibrary">
+<var>${count}</var>
+<arg>${products_loc}</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<status status="NOT RUN" start="2024-05-23T14:06:40.097816" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${visible_number}</arg>
+<arg>${count}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="NOT RUN" start="2024-05-23T14:06:40.097816" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2024-05-23T14:06:34.319363" elapsed="5.778453">Element with locator 'xpath=//div[@class="shelf-container-header"]//span' not found.</status>
+</kw>
+<status status="FAIL" start="2024-05-23T14:06:29.293839" elapsed="10.804989">Element with locator 'xpath=//div[@class="shelf-container-header"]//span' not found.</status>
+</test>
+<test id="s1-t3" name="Validate the Product Price From Lowest To Highest" line="20">
+<kw name="Filtered Products: Verify Products Are Sorted In Price Low To High" owner="cartpage">
+<kw name="Filtered Products: Verify Whether Products Sorted" owner="cartpage">
+<kw name="Select dropdown menu answer" owner="globalweb">
+<if>
+<branch type="IF" condition="${skip_menu_check} == False">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2024-05-23T14:06:45.540782" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-3.png"&gt;&lt;img src="selenium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-05-23T14:06:45.540782" level="FAIL">Element 'css=div[class='sort'] select' not visible after 5 seconds.</msg>
+<arg>${element}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="FAIL" start="2024-05-23T14:06:40.104442" elapsed="5.437359">Element 'css=div[class='sort'] select' not visible after 5 seconds.</status>
+</kw>
+<status status="FAIL" start="2024-05-23T14:06:40.104442" elapsed="5.437359">Element 'css=div[class='sort'] select' not visible after 5 seconds.</status>
+</branch>
+<status status="FAIL" start="2024-05-23T14:06:40.104442" elapsed="5.437856">Element 'css=div[class='sort'] select' not visible after 5 seconds.</status>
+</if>
+<kw name="Get Element Count" owner="SeleniumLibrary">
+<var>${element_count}</var>
+<arg>${element} ${option_subelement}</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<status status="NOT RUN" start="2024-05-23T14:06:45.542828" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="${element_count} &gt; ${range_start}">
+<kw name="Evaluate" owner="BuiltIn">
+<var>${random}</var>
+<arg>random.randint(${range_start}, (${element_count}-1))</arg>
+<arg>random</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" start="2024-05-23T14:06:45.542828" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2024-05-23T14:06:45.542828" elapsed="0.000000"/>
+</branch>
+<branch type="ELSE">
+<kw name="Evaluate" owner="BuiltIn">
+<var>${random}</var>
+<arg>${element_count}-1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" start="2024-05-23T14:06:45.542828" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2024-05-23T14:06:45.542828" elapsed="0.000000"/>
+</branch>
+<status status="NOT RUN" start="2024-05-23T14:06:45.542828" elapsed="0.000000"/>
+</if>
+<kw name="Convert To String" owner="BuiltIn">
+<var>${random_int}</var>
+<arg>${random}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="NOT RUN" start="2024-05-23T14:06:45.542828" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="${element_count} == 0">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>The element you are looking for was not found on the page. The element location may have been changed by the development team or it may have been removed. Check page for more details.</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2024-05-23T14:06:45.542828" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2024-05-23T14:06:45.542828" elapsed="0.000000"/>
+</branch>
+<branch type="ELSE IF" condition="'${select_element_value}'=='None' and '${select_element_text}'=='None' and ${element_count} &gt; 0">
+<kw name="Select From List By Index" owner="SeleniumLibrary">
+<arg>${element}</arg>
+<arg>${random_int}</arg>
+<doc>Selects options from selection list ``locator`` by ``indexes``.</doc>
+<status status="NOT RUN" start="2024-05-23T14:06:45.542828" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2024-05-23T14:06:45.542828" elapsed="0.000000"/>
+</branch>
+<branch type="ELSE IF" condition="'${select_element_value}'!='None' and '${select_element_text}'=='None' and ${element_count} &gt; 0">
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<arg>${element}</arg>
+<arg>${select_element_value}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="NOT RUN" start="2024-05-23T14:06:45.542828" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2024-05-23T14:06:45.542828" elapsed="0.000000"/>
+</branch>
+<branch type="ELSE IF" condition="'${select_element_value}'=='None' and '${select_element_text}'!='None' and ${element_count} &gt; 0">
+<kw name="Select From List By Label" owner="SeleniumLibrary">
+<arg>${element}</arg>
+<arg>${select_element_text}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<status status="NOT RUN" start="2024-05-23T14:06:45.542828" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2024-05-23T14:06:45.542828" elapsed="0.000000"/>
+</branch>
+<status status="NOT RUN" start="2024-05-23T14:06:45.542828" elapsed="0.000000"/>
+</if>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${element}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2024-05-23T14:06:45.542828" elapsed="0.000000"/>
+</kw>
+<kw name="Get Selected List Label" owner="SeleniumLibrary">
+<var>${selected_option}</var>
+<arg>${element}</arg>
+<doc>Returns the label of selected option from selection list ``locator``.</doc>
+<status status="NOT RUN" start="2024-05-23T14:06:45.542828" elapsed="0.000000"/>
+</kw>
+<return>
+<value>${selected_option}</value>
+<status status="NOT RUN" start="2024-05-23T14:06:45.542828" elapsed="0.000000"/>
+</return>
+<arg>${select_dd_loc}</arg>
+<arg>select_element_value=${price_filter}</arg>
+<doc>&gt;"element" is the main menu element that holds the subelements in it.
+&gt;"option_subelement" is used for counting the number of subelements. It
+defaults to "option" in the jquery string since that is most commonly used
+in the HTML.
+&gt;"select_element_value" can be used if an specific option in the dropdown menu
+wants to be selected instead of a random one by value. Since normally we want a random
+one, this defaults to "None."
+&gt;"select_element_text" can be used if an specific option in the dropdown menu
+wants to be selected instead of a random one by text/label. Since normally we want a random
+one, this defaults to "None."
+&gt;"range_start" is used for selecting where to start when randomizing the
+subelement selector. Since the "0" subelement is usually a non-selectable
+option, this defaults to "1."
+&gt;"skip_menu_check" is an option that can skip the menu element visual ID check
+on the page. Normally we want this to make sure it's visible on the page
+before we interact with it, however in some cases, the literal menu element
+that houses the subelements is overlapped by an invisible element and can cause
+issues with the automation driver. If this issue arises, setting this to
+"True" will skip that check. It defaults to "False."</doc>
+<status status="FAIL" start="2024-05-23T14:06:40.104442" elapsed="5.438386">Element 'css=div[class='sort'] select' not visible after 5 seconds.</status>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2024-05-23T14:06:45.542828" elapsed="0.000000"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<var>@{list}</var>
+<doc>Returns a list containing given items.</doc>
+<status status="NOT RUN" start="2024-05-23T14:06:45.542828" elapsed="0.000000"/>
+</kw>
+<kw name="Get Element Count" owner="SeleniumLibrary">
+<var>${count}</var>
+<arg>${products_loc}</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<status status="NOT RUN" start="2024-05-23T14:06:45.542828" elapsed="0.000000"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<var>${cost}</var>
+<arg>(${price_tag_loc})[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-05-23T14:06:45.542828" elapsed="0.000000"/>
+</kw>
+<kw name="Convert To Integer" owner="BuiltIn">
+<var>${cost}</var>
+<arg>${cost}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<status status="NOT RUN" start="2024-05-23T14:06:45.542828" elapsed="0.000000"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${list}</arg>
+<arg>${cost}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="NOT RUN" start="2024-05-23T14:06:45.542828" elapsed="0.000000"/>
+</kw>
+<var name="${i}"/>
+<status status="NOT RUN" start="2024-05-23T14:06:45.542828" elapsed="0.000000"/>
+</iter>
+<var>${i}</var>
+<value>1</value>
+<value>${count}+${1}</value>
+<status status="NOT RUN" start="2024-05-23T14:06:45.542828" elapsed="0.000000"/>
+</for>
+<kw name="Log" owner="BuiltIn">
+<arg>${list}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2024-05-23T14:06:45.542828" elapsed="0.000000"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<var>@{list_sorted}</var>
+<arg>@{list}</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="NOT RUN" start="2024-05-23T14:06:45.542828" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="${low_to_high}">
+<kw name="Sort List" owner="Collections">
+<arg>${list_sorted}</arg>
+<doc>Sorts the given list in place.</doc>
+<status status="NOT RUN" start="2024-05-23T14:06:45.542828" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2024-05-23T14:06:45.542828" elapsed="0.000000"/>
+</branch>
+<branch type="ELSE">
+<kw name="Run Keywords" owner="BuiltIn">
+<arg>Sort List</arg>
+<arg>${list_sorted}</arg>
+<arg>AND</arg>
+<arg>Reverse List</arg>
+<arg>${list_sorted}</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<status status="NOT RUN" start="2024-05-23T14:06:45.542828" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2024-05-23T14:06:45.542828" elapsed="0.000000"/>
+</branch>
+<status status="NOT RUN" start="2024-05-23T14:06:45.542828" elapsed="0.000000"/>
+</if>
+<kw name="Log" owner="BuiltIn">
+<arg>Products prices after sorting--&gt; ${list_sorted}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2024-05-23T14:06:45.542828" elapsed="0.000000"/>
+</kw>
+<kw name="Lists Should Be Equal" owner="Collections">
+<arg>${list}</arg>
+<arg>${list_sorted}</arg>
+<doc>Fails if given lists are unequal.</doc>
+<status status="NOT RUN" start="2024-05-23T14:06:45.542828" elapsed="0.000000"/>
+</kw>
+<arg>price_filter=${lowertohighest}</arg>
+<arg>low_to_high=True</arg>
+<doc>Verifies that the products are sorted according to the applied sort by price.
+ ${low_to_high}=True indicates Products are sorted by price low to high
+ ${low_to_high}=False indicates Products are sorted by price high to low</doc>
+<status status="FAIL" start="2024-05-23T14:06:40.103362" elapsed="5.439466">Element 'css=div[class='sort'] select' not visible after 5 seconds.</status>
+</kw>
+<status status="FAIL" start="2024-05-23T14:06:40.101840" elapsed="5.440988">Element 'css=div[class='sort'] select' not visible after 5 seconds.</status>
+</kw>
+<status status="FAIL" start="2024-05-23T14:06:40.100828" elapsed="5.451747">Element 'css=div[class='sort'] select' not visible after 5 seconds.</status>
+</test>
+<test id="s1-t4" name="Validate the Product Price Highest To Lowest" line="24">
+<kw name="Filtered Products: Verify Products Are Sorted In Price High To Low" owner="cartpage">
+<kw name="Filtered Products: Verify Whether Products Sorted" owner="cartpage">
+<kw name="Select dropdown menu answer" owner="globalweb">
+<if>
+<branch type="IF" condition="${skip_menu_check} == False">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2024-05-23T14:06:50.948740" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-4.png"&gt;&lt;img src="selenium-screenshot-4.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-05-23T14:06:50.948740" level="FAIL">Element 'css=div[class='sort'] select' not visible after 5 seconds.</msg>
+<arg>${element}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="FAIL" start="2024-05-23T14:06:45.554668" elapsed="5.395065">Element 'css=div[class='sort'] select' not visible after 5 seconds.</status>
+</kw>
+<status status="FAIL" start="2024-05-23T14:06:45.554668" elapsed="5.396065">Element 'css=div[class='sort'] select' not visible after 5 seconds.</status>
+</branch>
+<status status="FAIL" start="2024-05-23T14:06:45.554668" elapsed="5.396065">Element 'css=div[class='sort'] select' not visible after 5 seconds.</status>
+</if>
+<kw name="Get Element Count" owner="SeleniumLibrary">
+<var>${element_count}</var>
+<arg>${element} ${option_subelement}</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<status status="NOT RUN" start="2024-05-23T14:06:50.950733" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="${element_count} &gt; ${range_start}">
+<kw name="Evaluate" owner="BuiltIn">
+<var>${random}</var>
+<arg>random.randint(${range_start}, (${element_count}-1))</arg>
+<arg>random</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" start="2024-05-23T14:06:50.951732" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2024-05-23T14:06:50.951732" elapsed="0.000704"/>
+</branch>
+<branch type="ELSE">
+<kw name="Evaluate" owner="BuiltIn">
+<var>${random}</var>
+<arg>${element_count}-1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" start="2024-05-23T14:06:50.953150" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2024-05-23T14:06:50.952436" elapsed="0.000714"/>
+</branch>
+<status status="NOT RUN" start="2024-05-23T14:06:50.951732" elapsed="0.001418"/>
+</if>
+<kw name="Convert To String" owner="BuiltIn">
+<var>${random_int}</var>
+<arg>${random}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="NOT RUN" start="2024-05-23T14:06:50.953150" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="${element_count} == 0">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>The element you are looking for was not found on the page. The element location may have been changed by the development team or it may have been removed. Check page for more details.</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2024-05-23T14:06:50.954201" elapsed="0.000186"/>
+</kw>
+<status status="NOT RUN" start="2024-05-23T14:06:50.953150" elapsed="0.001237"/>
+</branch>
+<branch type="ELSE IF" condition="'${select_element_value}'=='None' and '${select_element_text}'=='None' and ${element_count} &gt; 0">
+<kw name="Select From List By Index" owner="SeleniumLibrary">
+<arg>${element}</arg>
+<arg>${random_int}</arg>
+<doc>Selects options from selection list ``locator`` by ``indexes``.</doc>
+<status status="NOT RUN" start="2024-05-23T14:06:50.954387" elapsed="0.000505"/>
+</kw>
+<status status="NOT RUN" start="2024-05-23T14:06:50.954387" elapsed="0.000505"/>
+</branch>
+<branch type="ELSE IF" condition="'${select_element_value}'!='None' and '${select_element_text}'=='None' and ${element_count} &gt; 0">
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<arg>${element}</arg>
+<arg>${select_element_value}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="NOT RUN" start="2024-05-23T14:06:50.954892" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2024-05-23T14:06:50.954892" elapsed="0.000000"/>
+</branch>
+<branch type="ELSE IF" condition="'${select_element_value}'=='None' and '${select_element_text}'!='None' and ${element_count} &gt; 0">
+<kw name="Select From List By Label" owner="SeleniumLibrary">
+<arg>${element}</arg>
+<arg>${select_element_text}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<status status="NOT RUN" start="2024-05-23T14:06:50.955389" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2024-05-23T14:06:50.954892" elapsed="0.000497"/>
+</branch>
+<status status="NOT RUN" start="2024-05-23T14:06:50.953150" elapsed="0.002239"/>
+</if>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${element}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2024-05-23T14:06:50.955389" elapsed="0.000415"/>
+</kw>
+<kw name="Get Selected List Label" owner="SeleniumLibrary">
+<var>${selected_option}</var>
+<arg>${element}</arg>
+<doc>Returns the label of selected option from selection list ``locator``.</doc>
+<status status="NOT RUN" start="2024-05-23T14:06:50.955804" elapsed="0.000000"/>
+</kw>
+<return>
+<value>${selected_option}</value>
+<status status="NOT RUN" start="2024-05-23T14:06:50.955804" elapsed="0.000000"/>
+</return>
+<arg>${select_dd_loc}</arg>
+<arg>select_element_value=${price_filter}</arg>
+<doc>&gt;"element" is the main menu element that holds the subelements in it.
+&gt;"option_subelement" is used for counting the number of subelements. It
+defaults to "option" in the jquery string since that is most commonly used
+in the HTML.
+&gt;"select_element_value" can be used if an specific option in the dropdown menu
+wants to be selected instead of a random one by value. Since normally we want a random
+one, this defaults to "None."
+&gt;"select_element_text" can be used if an specific option in the dropdown menu
+wants to be selected instead of a random one by text/label. Since normally we want a random
+one, this defaults to "None."
+&gt;"range_start" is used for selecting where to start when randomizing the
+subelement selector. Since the "0" subelement is usually a non-selectable
+option, this defaults to "1."
+&gt;"skip_menu_check" is an option that can skip the menu element visual ID check
+on the page. Normally we want this to make sure it's visible on the page
+before we interact with it, however in some cases, the literal menu element
+that houses the subelements is overlapped by an invisible element and can cause
+issues with the automation driver. If this issue arises, setting this to
+"True" will skip that check. It defaults to "False."</doc>
+<status status="FAIL" start="2024-05-23T14:06:45.554668" elapsed="5.401640">Element 'css=div[class='sort'] select' not visible after 5 seconds.</status>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2024-05-23T14:06:50.956527" elapsed="0.000000"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<var>@{list}</var>
+<doc>Returns a list containing given items.</doc>
+<status status="NOT RUN" start="2024-05-23T14:06:50.956527" elapsed="0.000000"/>
+</kw>
+<kw name="Get Element Count" owner="SeleniumLibrary">
+<var>${count}</var>
+<arg>${products_loc}</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<status status="NOT RUN" start="2024-05-23T14:06:50.957025" elapsed="0.000000"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<var>${cost}</var>
+<arg>(${price_tag_loc})[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-05-23T14:06:50.958045" elapsed="0.000000"/>
+</kw>
+<kw name="Convert To Integer" owner="BuiltIn">
+<var>${cost}</var>
+<arg>${cost}</arg>
+<doc>Converts the given item to an integer number.</doc>
+<status status="NOT RUN" start="2024-05-23T14:06:50.958045" elapsed="0.000000"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${list}</arg>
+<arg>${cost}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="NOT RUN" start="2024-05-23T14:06:50.959047" elapsed="0.000000"/>
+</kw>
+<var name="${i}"/>
+<status status="NOT RUN" start="2024-05-23T14:06:50.957025" elapsed="0.002022"/>
+</iter>
+<var>${i}</var>
+<value>1</value>
+<value>${count}+${1}</value>
+<status status="NOT RUN" start="2024-05-23T14:06:50.957025" elapsed="0.002022"/>
+</for>
+<kw name="Log" owner="BuiltIn">
+<arg>${list}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2024-05-23T14:06:50.959047" elapsed="0.000000"/>
+</kw>
+<kw name="Create List" owner="BuiltIn">
+<var>@{list_sorted}</var>
+<arg>@{list}</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="NOT RUN" start="2024-05-23T14:06:50.960048" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="${low_to_high}">
+<kw name="Sort List" owner="Collections">
+<arg>${list_sorted}</arg>
+<doc>Sorts the given list in place.</doc>
+<status status="NOT RUN" start="2024-05-23T14:06:50.961152" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2024-05-23T14:06:50.960048" elapsed="0.001104"/>
+</branch>
+<branch type="ELSE">
+<kw name="Run Keywords" owner="BuiltIn">
+<arg>Sort List</arg>
+<arg>${list_sorted}</arg>
+<arg>AND</arg>
+<arg>Reverse List</arg>
+<arg>${list_sorted}</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<status status="NOT RUN" start="2024-05-23T14:06:50.961152" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2024-05-23T14:06:50.961152" elapsed="0.000978"/>
+</branch>
+<status status="NOT RUN" start="2024-05-23T14:06:50.960048" elapsed="0.002082"/>
+</if>
+<kw name="Log" owner="BuiltIn">
+<arg>Products prices after sorting--&gt; ${list_sorted}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2024-05-23T14:06:50.962130" elapsed="0.000000"/>
+</kw>
+<kw name="Lists Should Be Equal" owner="Collections">
+<arg>${list}</arg>
+<arg>${list_sorted}</arg>
+<doc>Fails if given lists are unequal.</doc>
+<status status="NOT RUN" start="2024-05-23T14:06:50.963040" elapsed="0.000000"/>
+</kw>
+<arg>price_filter=${highertolower}</arg>
+<arg>low_to_high=False</arg>
+<doc>Verifies that the products are sorted according to the applied sort by price.
+ ${low_to_high}=True indicates Products are sorted by price low to high
+ ${low_to_high}=False indicates Products are sorted by price high to low</doc>
+<status status="FAIL" start="2024-05-23T14:06:45.554668" elapsed="5.408372">Element 'css=div[class='sort'] select' not visible after 5 seconds.</status>
+</kw>
+<status status="FAIL" start="2024-05-23T14:06:45.554668" elapsed="5.409380">Element 'css=div[class='sort'] select' not visible after 5 seconds.</status>
+</kw>
+<status status="FAIL" start="2024-05-23T14:06:45.554083" elapsed="5.410962">Element 'css=div[class='sort'] select' not visible after 5 seconds.</status>
+</test>
+<test id="s1-t5" name="Validate the Product Price In Both Ways" line="27">
+<kw name="Verify The Options In Select dropdown" owner="cartpage">
+<kw name="Create List" owner="BuiltIn">
+<msg time="2024-05-23T14:06:50.969752" level="INFO">@{list} = [ ]</msg>
+<var>@{list}</var>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2024-05-23T14:06:50.969599" elapsed="0.000153"/>
+</kw>
+<kw name="Get Element Count" owner="SeleniumLibrary">
+<msg time="2024-05-23T14:06:53.337013" level="INFO">${count} = 0</msg>
+<var>${count}</var>
+<arg>${orderby_dd_loc}</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<status status="PASS" start="2024-05-23T14:06:50.970249" elapsed="2.366764"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<var>${order_by}</var>
+<arg>(${orderby_dd_loc})[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-05-23T14:06:53.338824" elapsed="0.000000"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${list}</arg>
+<arg>${order_by}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="NOT RUN" start="2024-05-23T14:06:53.339124" elapsed="0.000078"/>
+</kw>
+<var name="${i}"/>
+<status status="NOT RUN" start="2024-05-23T14:06:53.337813" elapsed="0.001389"/>
+</iter>
+<var>${i}</var>
+<value>1</value>
+<value>${count}+${1}</value>
+<status status="NOT RUN" start="2024-05-23T14:06:53.337013" elapsed="0.002189"/>
+</for>
+<kw name="Lists Should Be Equal" owner="Collections">
+<msg time="2024-05-23T14:06:53.340050" level="FAIL">Lengths are different: 0 != 3</msg>
+<arg>${list}</arg>
+<arg>${order_by_list}</arg>
+<doc>Fails if given lists are unequal.</doc>
+<status status="FAIL" start="2024-05-23T14:06:53.339712" elapsed="0.000338">Lengths are different: 0 != 3</status>
+</kw>
+<status status="FAIL" start="2024-05-23T14:06:50.968043" elapsed="2.372506">Lengths are different: 0 != 3</status>
+</kw>
+<kw name=" Filtered Products: Alternate way" owner="cartpage">
+<status status="NOT RUN" start="2024-05-23T14:06:53.342147" elapsed="0.000536"/>
+</kw>
+<status status="FAIL" start="2024-05-23T14:06:50.967043" elapsed="2.376747">Lengths are different: 0 != 3</status>
+</test>
+<test id="s1-t6" name="Validate Product Count Based On Vendor" line="31">
+<kw name="Get List Count Based On Vendor" owner="cartpage">
+<kw name="Select Random Vendor" owner="cartpage">
+<kw name="Get Element Count" owner="SeleniumLibrary">
+<msg time="2024-05-23T14:06:53.357479" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=124.0.6367.208)
+Stacktrace:
+	GetHandleVerifier [0x003BC113+48259]
+	(No symbol) [0x0034CA41]
+	(No symbol) [0x00240A17]
+	(No symbol) [0x0021E02B]
+	(No symbol) [0x002A742E]
+	(No symbol) [0x002B9476]
+	(No symbol) [0x002A0B36]
+	(No symbol) [0x0027570D]
+	(No symbol) [0x002762CD]
+	GetHandleVerifier [0x00676533+2908323]
+	GetHandleVerifier [0x006B3B4B+3159739]
+	GetHandleVerifier [0x0045505B+674763]
+	GetHandleVerifier [0x0045B21C+699788]
+	(No symbol) [0x00356244]
+	(No symbol) [0x00352298]
+	(No symbol) [0x0035242C]
+	(No symbol) [0x00344BB0]
+	BaseThreadInitThunk [0x769B6839+25]
+	RtlGetFullPathName_UEx [0x77BD906F+1215]
+	RtlGetFullPathName_UEx [0x77BD903D+1165]
+</msg>
+<msg time="2024-05-23T14:06:53.361494" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=124.0.6367.208)
+Stacktrace:
+	GetHandleVerifier [0x003BC113+48259]
+	(No symbol) [0x0034CA41]
+	(No symbol) [0x00240A17]
+	(No symbol) [0x0021E02B]
+	(No symbol) [0x002A742E]
+	(No symbol) [0x002B9476]
+	(No symbol) [0x002A0B36]
+	(No symbol) [0x0027570D]
+	(No symbol) [0x002762CD]
+	GetHandleVerifier [0x00676533+2908323]
+	GetHandleVerifier [0x006B3B4B+3159739]
+	GetHandleVerifier [0x0045505B+674763]
+	GetHandleVerifier [0x0045B21C+699788]
+	(No symbol) [0x00356244]
+	(No symbol) [0x00352298]
+	(No symbol) [0x0035242C]
+	(No symbol) [0x00344BB0]
+	BaseThreadInitThunk [0x769B6839+25]
+	RtlGetFullPathName_UEx [0x77BD906F+1215]
+	RtlGetFullPathName_UEx [0x77BD903D+1165]
+</msg>
+<var>${count}</var>
+<arg>${vendors_tab_loc}</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<status status="FAIL" start="2024-05-23T14:06:53.348919" elapsed="0.082831">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=124.0.6367.208)
+Stacktrace:
+	GetHandleVerifier [0x003BC113+48259]
+	(No symbol) [0x0034CA41]
+	(No symbol) [0x00240A17]
+	(No symbol) [0x0021E02B]
+	(No symbol) [0x002A742E]
+	(No symbol) [0x002B9476]
+	(No symbol) [0x002A0B36]
+	(No symbol) [0x0027570D]
+	(No symbol) [0x002762CD]
+	GetHandleVerifier [0x00676533+2908323]
+	GetHandleVerifier [0x006B3B4B+3159739]
+	GetHandleVerifier [0x0045505B+674763]
+	GetHandleVerifier [0x0045B21C+699788]
+	(No symbol) [0x00356244]
+	(No symbol) [0x00352298]
+	(No symbol) [0x0035242C]
+	(No symbol) [0x00344BB0]
+	BaseThreadInitThunk [0x769B6839+25]
+	RtlGetFullPathName_UEx [0x77BD906F+1215]
+	RtlGetFullPathName_UEx [0x77BD903D+1165]
+</status>
+</kw>
+<kw name="Randrange" owner="random">
+<var>${randomNo}</var>
+<arg>${1}</arg>
+<arg>${count}</arg>
+<doc>Choose a random item from range(start, stop[, step]).</doc>
+<status status="NOT RUN" start="2024-05-23T14:06:53.431835" elapsed="0.000000"/>
+</kw>
+<kw name="Find And Click Element" owner="globalweb">
+<arg>(${vendors_tab_loc})[${randomNo}]</arg>
+<doc>&gt;Element waits to be visible and then clicks on element.
+&gt;Timeout is the amount of time the function waits for the element to be visible.
+&gt;If validate_elementvisible is entered, the function will perform a validation check to
+ensure the expected element is present in the DOM of the page and is also visible.
+&gt;If element_goneafterclick is passed as True, verifies the element is not appearing after click.</doc>
+<status status="NOT RUN" start="2024-05-23T14:06:53.432336" elapsed="0.000000"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<var>${vendor_name}</var>
+<arg>(${vendors_tab_loc})[${randomNo}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-05-23T14:06:53.432336" elapsed="0.000000"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2024-05-23T14:06:53.433356" elapsed="0.000000"/>
+</kw>
+<kw name="Set Test Variable" owner="BuiltIn">
+<arg>${vendor_name}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<status status="NOT RUN" start="2024-05-23T14:06:53.433451" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2024-05-23T14:06:53.348331" elapsed="0.085120">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=124.0.6367.208)
+Stacktrace:
+	GetHandleVerifier [0x003BC113+48259]
+	(No symbol) [0x0034CA41]
+	(No symbol) [0x00240A17]
+	(No symbol) [0x0021E02B]
+	(No symbol) [0x002A742E]
+	(No symbol) [0x002B9476]
+	(No symbol) [0x002A0B36]
+	(No symbol) [0x0027570D]
+	(No symbol) [0x002762CD]
+	GetHandleVerifier [0x00676533+2908323]
+	GetHandleVerifier [0x006B3B4B+3159739]
+	GetHandleVerifier [0x0045505B+674763]
+	GetHandleVerifier [0x0045B21C+699788]
+	(No symbol) [0x00356244]
+	(No symbol) [0x00352298]
+	(No symbol) [0x0035242C]
+	(No symbol) [0x00344BB0]
+	BaseThreadInitThunk [0x769B6839+25]
+	RtlGetFullPathName_UEx [0x77BD906F+1215]
+	RtlGetFullPathName_UEx [0x77BD903D+1165]
+</status>
+</kw>
+<kw name="Get List Count" owner="cartpage">
+<status status="NOT RUN" start="2024-05-23T14:06:53.433451" elapsed="0.000000"/>
+</kw>
+<kw name="Get Product Names" owner="cartpage">
+<status status="NOT RUN" start="2024-05-23T14:06:53.433451" elapsed="0.001045"/>
+</kw>
+<status status="FAIL" start="2024-05-23T14:06:53.347829" elapsed="0.086667">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=124.0.6367.208)
+Stacktrace:
+	GetHandleVerifier [0x003BC113+48259]
+	(No symbol) [0x0034CA41]
+	(No symbol) [0x00240A17]
+	(No symbol) [0x0021E02B]
+	(No symbol) [0x002A742E]
+	(No symbol) [0x002B9476]
+	(No symbol) [0x002A0B36]
+	(No symbol) [0x0027570D]
+	(No symbol) [0x002762CD]
+	GetHandleVerifier [0x00676533+2908323]
+	GetHandleVerifier [0x006B3B4B+3159739]
+	GetHandleVerifier [0x0045505B+674763]
+	GetHandleVerifier [0x0045B21C+699788]
+	(No symbol) [0x00356244]
+	(No symbol) [0x00352298]
+	(No symbol) [0x0035242C]
+	(No symbol) [0x00344BB0]
+	BaseThreadInitThunk [0x769B6839+25]
+	RtlGetFullPathName_UEx [0x77BD906F+1215]
+	RtlGetFullPathName_UEx [0x77BD903D+1165]
+</status>
+</kw>
+<status status="FAIL" start="2024-05-23T14:06:53.346836" elapsed="0.088301">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=124.0.6367.208)
+Stacktrace:
+	GetHandleVerifier [0x003BC113+48259]
+	(No symbol) [0x0034CA41]
+	(No symbol) [0x00240A17]
+	(No symbol) [0x0021E02B]
+	(No symbol) [0x002A742E]
+	(No symbol) [0x002B9476]
+	(No symbol) [0x002A0B36]
+	(No symbol) [0x0027570D]
+	(No symbol) [0x002762CD]
+	GetHandleVerifier [0x00676533+2908323]
+	GetHandleVerifier [0x006B3B4B+3159739]
+	GetHandleVerifier [0x0045505B+674763]
+	GetHandleVerifier [0x0045B21C+699788]
+	(No symbol) [0x00356244]
+	(No symbol) [0x00352298]
+	(No symbol) [0x0035242C]
+	(No symbol) [0x00344BB0]
+	BaseThreadInitThunk [0x769B6839+25]
+	RtlGetFullPathName_UEx [0x77BD906F+1215]
+	RtlGetFullPathName_UEx [0x77BD903D+1165]
+</status>
+</test>
+<test id="s1-t7" name="Select Product In List" line="36">
+<kw name="Add Selected Product To Cart" owner="cartpage">
+<kw name="Select Random Product" owner="cartpage">
+<kw name="Create List" owner="BuiltIn">
+<msg time="2024-05-23T14:06:53.446947" level="INFO">@{list} = [ ]</msg>
+<var>@{list}</var>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2024-05-23T14:06:53.446380" elapsed="0.000567"/>
+</kw>
+<kw name="Get Element Count" owner="SeleniumLibrary">
+<msg time="2024-05-23T14:06:53.451696" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=124.0.6367.208)
+Stacktrace:
+	GetHandleVerifier [0x003BC113+48259]
+	(No symbol) [0x0034CA41]
+	(No symbol) [0x00240A17]
+	(No symbol) [0x0021E02B]
+	(No symbol) [0x002A742E]
+	(No symbol) [0x002B9476]
+	(No symbol) [0x002A0B36]
+	(No symbol) [0x0027570D]
+	(No symbol) [0x002762CD]
+	GetHandleVerifier [0x00676533+2908323]
+	GetHandleVerifier [0x006B3B4B+3159739]
+	GetHandleVerifier [0x0045505B+674763]
+	GetHandleVerifier [0x0045B21C+699788]
+	(No symbol) [0x00356244]
+	(No symbol) [0x00352298]
+	(No symbol) [0x0035242C]
+	(No symbol) [0x00344BB0]
+	BaseThreadInitThunk [0x769B6839+25]
+	RtlGetFullPathName_UEx [0x77BD906F+1215]
+	RtlGetFullPathName_UEx [0x77BD903D+1165]
+</msg>
+<msg time="2024-05-23T14:06:53.455858" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=124.0.6367.208)
+Stacktrace:
+	GetHandleVerifier [0x003BC113+48259]
+	(No symbol) [0x0034CA41]
+	(No symbol) [0x00240A17]
+	(No symbol) [0x0021E02B]
+	(No symbol) [0x002A742E]
+	(No symbol) [0x002B9476]
+	(No symbol) [0x002A0B36]
+	(No symbol) [0x0027570D]
+	(No symbol) [0x002762CD]
+	GetHandleVerifier [0x00676533+2908323]
+	GetHandleVerifier [0x006B3B4B+3159739]
+	GetHandleVerifier [0x0045505B+674763]
+	GetHandleVerifier [0x0045B21C+699788]
+	(No symbol) [0x00356244]
+	(No symbol) [0x00352298]
+	(No symbol) [0x0035242C]
+	(No symbol) [0x00344BB0]
+	BaseThreadInitThunk [0x769B6839+25]
+	RtlGetFullPathName_UEx [0x77BD906F+1215]
+	RtlGetFullPathName_UEx [0x77BD903D+1165]
+</msg>
+<var>${count}</var>
+<arg>${products_txt_loc}</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<status status="FAIL" start="2024-05-23T14:06:53.447446" elapsed="0.010925">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=124.0.6367.208)
+Stacktrace:
+	GetHandleVerifier [0x003BC113+48259]
+	(No symbol) [0x0034CA41]
+	(No symbol) [0x00240A17]
+	(No symbol) [0x0021E02B]
+	(No symbol) [0x002A742E]
+	(No symbol) [0x002B9476]
+	(No symbol) [0x002A0B36]
+	(No symbol) [0x0027570D]
+	(No symbol) [0x002762CD]
+	GetHandleVerifier [0x00676533+2908323]
+	GetHandleVerifier [0x006B3B4B+3159739]
+	GetHandleVerifier [0x0045505B+674763]
+	GetHandleVerifier [0x0045B21C+699788]
+	(No symbol) [0x00356244]
+	(No symbol) [0x00352298]
+	(No symbol) [0x0035242C]
+	(No symbol) [0x00344BB0]
+	BaseThreadInitThunk [0x769B6839+25]
+	RtlGetFullPathName_UEx [0x77BD906F+1215]
+	RtlGetFullPathName_UEx [0x77BD903D+1165]
+</status>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Get Text" owner="SeleniumLibrary">
+<var>${prod_name}</var>
+<arg>(${products_txt_loc})[${i}]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-05-23T14:06:53.459000" elapsed="0.000000"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${list}</arg>
+<arg>${prod_name}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="NOT RUN" start="2024-05-23T14:06:53.459000" elapsed="0.000000"/>
+</kw>
+<var name="${i}"/>
+<status status="NOT RUN" start="2024-05-23T14:06:53.458804" elapsed="0.000196"/>
+</iter>
+<var>${i}</var>
+<value>1</value>
+<value>${count}+${1}</value>
+<status status="NOT RUN" start="2024-05-23T14:06:53.458737" elapsed="0.000263"/>
+</for>
+<kw name="Log" owner="BuiltIn">
+<arg>${list}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2024-05-23T14:06:53.459822" elapsed="0.000000"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<var>${random_prod}</var>
+<arg>random.choice($list)</arg>
+<arg>random</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" start="2024-05-23T14:06:53.460365" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>${random_prod}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2024-05-23T14:06:53.460365" elapsed="0.000000"/>
+</kw>
+<return>
+<value>${random_prod}</value>
+<status status="NOT RUN" start="2024-05-23T14:06:53.460365" elapsed="0.000000"/>
+</return>
+<var>${product_name}</var>
+<status status="FAIL" start="2024-05-23T14:06:53.445759" elapsed="0.015634">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=124.0.6367.208)
+Stacktrace:
+	GetHandleVerifier [0x003BC113+48259]
+	(No symbol) [0x0034CA41]
+	(No symbol) [0x00240A17]
+	(No symbol) [0x0021E02B]
+	(No symbol) [0x002A742E]
+	(No symbol) [0x002B9476]
+	(No symbol) [0x002A0B36]
+	(No symbol) [0x0027570D]
+	(No symbol) [0x002762CD]
+	GetHandleVerifier [0x00676533+2908323]
+	GetHandleVerifier [0x006B3B4B+3159739]
+	GetHandleVerifier [0x0045505B+674763]
+	GetHandleVerifier [0x0045B21C+699788]
+	(No symbol) [0x00356244]
+	(No symbol) [0x00352298]
+	(No symbol) [0x0035242C]
+	(No symbol) [0x00344BB0]
+	BaseThreadInitThunk [0x769B6839+25]
+	RtlGetFullPathName_UEx [0x77BD906F+1215]
+	RtlGetFullPathName_UEx [0x77BD903D+1165]
+</status>
+</kw>
+<kw name="Add Random Product To Cart" owner="cartpage">
+<arg>${product_name}</arg>
+<status status="NOT RUN" start="2024-05-23T14:06:53.461393" elapsed="0.000000"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2024-05-23T14:06:53.462384" elapsed="0.000000"/>
+</kw>
+<kw name="Validate Details In The Bag" owner="cartpage">
+<arg>${added_prod_loc}</arg>
+<arg>${product_name}</arg>
+<arg>${product_name}</arg>
+<status status="NOT RUN" start="2024-05-23T14:06:53.462384" elapsed="0.000000"/>
+</kw>
+<kw name="Validate Cost Details In The Bag" owner="cartpage">
+<arg>${cost_of_prod_check_loc}</arg>
+<arg>${cost_of_prod_val}</arg>
+<arg>${product_name}</arg>
+<status status="NOT RUN" start="2024-05-23T14:06:53.462384" elapsed="0.000000"/>
+</kw>
+<kw name="Verify Element On Page" owner="globalweb">
+<arg>${checkout_title_loc}</arg>
+<status status="NOT RUN" start="2024-05-23T14:06:53.463383" elapsed="0.000000"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<arg>${checkout_title_loc}</arg>
+<arg>${product_name}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="NOT RUN" start="2024-05-23T14:06:53.463383" elapsed="0.000000"/>
+</kw>
+<kw name="Find And Click Element" owner="globalweb">
+<arg>${checkout_btn_loc}</arg>
+<doc>&gt;Element waits to be visible and then clicks on element.
+&gt;Timeout is the amount of time the function waits for the element to be visible.
+&gt;If validate_elementvisible is entered, the function will perform a validation check to
+ensure the expected element is present in the DOM of the page and is also visible.
+&gt;If element_goneafterclick is passed as True, verifies the element is not appearing after click.</doc>
+<status status="NOT RUN" start="2024-05-23T14:06:53.463383" elapsed="0.000000"/>
+</kw>
+<kw name="Verify Element On Page" owner="globalweb">
+<arg>${shippingadd_txt_loc}</arg>
+<status status="NOT RUN" start="2024-05-23T14:06:53.464384" elapsed="0.000000"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<arg>${shippingadd_txt_loc}</arg>
+<arg>${shippingadd_txt}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="NOT RUN" start="2024-05-23T14:06:53.464384" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2024-05-23T14:06:53.443748" elapsed="0.020636">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=124.0.6367.208)
+Stacktrace:
+	GetHandleVerifier [0x003BC113+48259]
+	(No symbol) [0x0034CA41]
+	(No symbol) [0x00240A17]
+	(No symbol) [0x0021E02B]
+	(No symbol) [0x002A742E]
+	(No symbol) [0x002B9476]
+	(No symbol) [0x002A0B36]
+	(No symbol) [0x0027570D]
+	(No symbol) [0x002762CD]
+	GetHandleVerifier [0x00676533+2908323]
+	GetHandleVerifier [0x006B3B4B+3159739]
+	GetHandleVerifier [0x0045505B+674763]
+	GetHandleVerifier [0x0045B21C+699788]
+	(No symbol) [0x00356244]
+	(No symbol) [0x00352298]
+	(No symbol) [0x0035242C]
+	(No symbol) [0x00344BB0]
+	BaseThreadInitThunk [0x769B6839+25]
+	RtlGetFullPathName_UEx [0x77BD906F+1215]
+	RtlGetFullPathName_UEx [0x77BD903D+1165]
+</status>
+</kw>
+<kw name="Enter The Details In Shipping Address Page" owner="checkoutpage">
+<status status="NOT RUN" start="2024-05-23T14:06:53.465390" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2024-05-23T14:06:53.442755" elapsed="0.024201">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=124.0.6367.208)
+Stacktrace:
+	GetHandleVerifier [0x003BC113+48259]
+	(No symbol) [0x0034CA41]
+	(No symbol) [0x00240A17]
+	(No symbol) [0x0021E02B]
+	(No symbol) [0x002A742E]
+	(No symbol) [0x002B9476]
+	(No symbol) [0x002A0B36]
+	(No symbol) [0x0027570D]
+	(No symbol) [0x002762CD]
+	GetHandleVerifier [0x00676533+2908323]
+	GetHandleVerifier [0x006B3B4B+3159739]
+	GetHandleVerifier [0x0045505B+674763]
+	GetHandleVerifier [0x0045B21C+699788]
+	(No symbol) [0x00356244]
+	(No symbol) [0x00352298]
+	(No symbol) [0x0035242C]
+	(No symbol) [0x00344BB0]
+	BaseThreadInitThunk [0x769B6839+25]
+	RtlGetFullPathName_UEx [0x77BD906F+1215]
+	RtlGetFullPathName_UEx [0x77BD903D+1165]
+</status>
+</test>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-05-23T14:06:53.473406" elapsed="2.224099"/>
+</kw>
+<doc>To create page objects of Login page</doc>
+<status status="FAIL" start="2024-05-23T14:06:11.751115" elapsed="43.946390"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="7" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="7" skip="0" id="s1" name="Login">Login</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2024-05-23T14:06:53.357479" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=124.0.6367.208)
+Stacktrace:
+	GetHandleVerifier [0x003BC113+48259]
+	(No symbol) [0x0034CA41]
+	(No symbol) [0x00240A17]
+	(No symbol) [0x0021E02B]
+	(No symbol) [0x002A742E]
+	(No symbol) [0x002B9476]
+	(No symbol) [0x002A0B36]
+	(No symbol) [0x0027570D]
+	(No symbol) [0x002762CD]
+	GetHandleVerifier [0x00676533+2908323]
+	GetHandleVerifier [0x006B3B4B+3159739]
+	GetHandleVerifier [0x0045505B+674763]
+	GetHandleVerifier [0x0045B21C+699788]
+	(No symbol) [0x00356244]
+	(No symbol) [0x00352298]
+	(No symbol) [0x0035242C]
+	(No symbol) [0x00344BB0]
+	BaseThreadInitThunk [0x769B6839+25]
+	RtlGetFullPathName_UEx [0x77BD906F+1215]
+	RtlGetFullPathName_UEx [0x77BD903D+1165]
+</msg>
+<msg time="2024-05-23T14:06:53.451696" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=124.0.6367.208)
+Stacktrace:
+	GetHandleVerifier [0x003BC113+48259]
+	(No symbol) [0x0034CA41]
+	(No symbol) [0x00240A17]
+	(No symbol) [0x0021E02B]
+	(No symbol) [0x002A742E]
+	(No symbol) [0x002B9476]
+	(No symbol) [0x002A0B36]
+	(No symbol) [0x0027570D]
+	(No symbol) [0x002762CD]
+	GetHandleVerifier [0x00676533+2908323]
+	GetHandleVerifier [0x006B3B4B+3159739]
+	GetHandleVerifier [0x0045505B+674763]
+	GetHandleVerifier [0x0045B21C+699788]
+	(No symbol) [0x00356244]
+	(No symbol) [0x00352298]
+	(No symbol) [0x0035242C]
+	(No symbol) [0x00344BB0]
+	BaseThreadInitThunk [0x769B6839+25]
+	RtlGetFullPathName_UEx [0x77BD906F+1215]
+	RtlGetFullPathName_UEx [0x77BD903D+1165]
+</msg>
+</errors>
+</robot>
